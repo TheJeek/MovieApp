@@ -1,0 +1,80 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# Build directories
+/target/
+/out/
+
+/node_modules/
+/frontend/node_modules/
+
+# Log files
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Maven specific files
+*.jar
+*.war
+*.ear
+*.class
+
+# IntelliJ's Maven configuration folder
+/.idea/misc.xml
+
+# Spring Boot specific
+spring-boot-devtools/
+*.swp
+
+# Docker files
+.dockerignore
+
+# Environment variables and sensitive data
+.env
+*.env
+
+# Build artifacts
+*.tar.gz
+*.tgz
+
+# PostgreSQL data
+/pgdata/
+
