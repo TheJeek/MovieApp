@@ -30,7 +30,7 @@ services:
     image: postgres
     container_name: postgresdb
     ports:
-      - "5433:5432"  # Expose Postgres on port 5433 (from container 5432 to host 5433)
+      - "5432:5432"  # Expose Postgres on port 5433 (from container 5432 to host 5433)
     environment:
       POSTGRES_USER: test
       POSTGRES_PASSWORD: test
