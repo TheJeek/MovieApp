@@ -17,6 +17,7 @@ public class WebConfig implements WebMvcConfigurer {
 
         registry.addMapping("/api/**")
                 .allowedOrigins("http://localhost:3000") // Adjust this to match your frontend URL
+                //.allowedOrigins("http://193.197.231.233")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Ensure OPTIONS is included
                 .allowedHeaders("*")
                 .allowCredentials(true);

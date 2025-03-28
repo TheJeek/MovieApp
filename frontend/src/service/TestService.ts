@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {TestObject} from "../database/TestObject.ts";
-const API_BASE_URL = "http://localhost:8080/api/testObject";
+
+const API_BASE_URL = import.meta.env.VITE_API_URL + "/api/testObject"
 
 export class TestService {
     static async getAll() {

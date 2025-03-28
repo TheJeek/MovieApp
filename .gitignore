@@ -66,10 +66,6 @@ spring-boot-devtools/
 # Docker files
 .dockerignore
 
-# Environment variables and sensitive data
-.env
-*.env
-
 # Build artifacts
 *.tar.gz
 *.tgz
