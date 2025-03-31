@@ -23,4 +23,7 @@ sleep 5
 echo "Restarting backend and frontend services..."
 docker-compose up --build -d backend frontend
 
+echo "Pruning dangling images"
+docker image prune -f
+
 echo "Deployment complete!"

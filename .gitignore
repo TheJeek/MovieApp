@@ -62,7 +62,7 @@ Thumbs.db
 # Spring Boot specific
 spring-boot-devtools/
 *.swp
-
+*.js
 # Docker files
 .dockerignore
 
