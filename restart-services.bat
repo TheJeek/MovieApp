@@ -1,6 +1,6 @@
 @echo off
-echo Stopping backend and frontend services (keeping database running)...
-docker-compose stop backend frontend
+echo Stopping backend and frontend services...
+docker-compose down
 
 echo Cleaning and rebuilding backend...
 cd backend
@@ -20,6 +20,9 @@ echo Waiting for database to be ready...
 timeout /t 5 >nul  REM Give it a few seconds to initialize
 
 echo Restarting backend and frontend services...
-docker-compose up --build -d backend frontend
+docker-compose up --build -d backend frontend prometheus grafana jaeger
+
+echo Cleaning up Dangling docker images...5
+docker image prune -f
 
 echo Deployment complete!

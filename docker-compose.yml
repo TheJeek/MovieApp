@@ -23,8 +23,6 @@ services:
       - "3000:80"
     depends_on:
       - backend
-    networks:
-      - movieapp-network
 
   postgresdb:
     image: postgres
@@ -40,8 +38,39 @@ services:
     networks:
       - movieapp-network  # Ensure the database is on the same network as the backend
 
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - observability
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3001:3000"   # 3001 cause I'm using local frontend on 3000
+    depends_on:
+      - prometheus
+    networks:
+      - observability
+
+  jaeger:
+    image: jaegertracing/all-in-one
+    container_name: jaeger
+    ports:
+      - "16686:16686"
+      - "14268:14268"
+    networks:
+      - observability
+
 networks:
   movieapp-network:
+    driver: bridge
+  observability:
     driver: bridge
 
 volumes:

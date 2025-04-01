@@ -21,7 +21,7 @@ echo "Waiting for database to be ready..."
 sleep 5
 
 echo "Restarting backend and frontend services..."
-docker-compose up --build -d backend frontend
+docker-compose up --build -d backend frontend prometheus grafana jaeger
 
 echo "Pruning dangling images"
 docker image prune -f
